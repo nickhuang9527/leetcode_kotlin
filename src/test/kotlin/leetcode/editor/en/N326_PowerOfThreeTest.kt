@@ -29,4 +29,12 @@ internal class N326_PowerOfThreeTest {
 
         assertEquals(true, output)
     }
+
+    @Test
+    fun isPowerOfThree_inputIs1594323_resultIsTrue() {
+        val input = 1594323
+        val output = solution.isPowerOfThree(input)
+
+        assertEquals(true, output)
+    }
 }

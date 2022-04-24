@@ -40,6 +40,8 @@
 
 package leetcode.editor.en
 
+import kotlin.math.log10
+
 class N326_PowerOfThree {
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -48,7 +50,7 @@ class N326_PowerOfThree {
             /*
             思路:
             一直整除 3 直到無法整除, 如果結果為 1 代表是 3 的冪
-             */
+
             return when {
                 n == 0 -> false
                 n == 1 -> true
@@ -61,6 +63,17 @@ class N326_PowerOfThree {
                     return num == 1
                 }
             }
+             */
+            /*
+            思路:
+            換底公式
+            logb(a) = logc(a)/logc(b)
+            log3(n) = log10(n)/log10(3)
+            得知
+             */
+            if (n <= 0) return false
+            return (log10(n.toDouble()) / log10(3.0)) % 1 == 0.0
+
             /*
             Follow up: Could you solve it without loops/recursion?
             Related Topics
